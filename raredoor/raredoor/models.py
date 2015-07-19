@@ -201,7 +201,6 @@ def generate_order_number(order):
 class Order(TimestampedModel):
     order_number = models.CharField(primary_key=True, max_lendth=20, blank=False, null=False, default=generate_order_number, editable=False)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=False, null=False, related_name='user_orders')
-    order_type = models.CharField(max_length=20, choices=ORDER_TYPES, blank=False, null=False, db_index=True)
     address = models.ForeignKey(PostalAddress)
     subtotal = models.DecimalField(max_digits=8, decimal_places=2, default=0.00, help_text='Total price of all items before discounts, shipping  and taxes')
     taxes = models.DecimalField(max_digits=8, decimal_places=2, blank=None, null=None, default=0.00, help_text="Taxes in dollars")
