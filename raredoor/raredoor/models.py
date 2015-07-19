@@ -72,16 +72,6 @@ DISCOUNT_TYPES = (
     (DiscountType.GENERAL, 'General discount'),
 )
 
-class OrderType(object):
-    """This class maintains a list of all order types"""
-    PURCHASE = 'PURCHASE'
-    OFFER = 'OFFER'
-
-ORDER_TYPES = (
-    (OrderType.PURCHASE, 'Purchase'),
-    (OrderType.OFFER, 'Offer'),
-)
-
 # ----------------------------------------------------
 # Models
 # ----------------------------------------------------
